@@ -1,0 +1,28 @@
+@include media-sm {
+    .signup {
+        width: 70%;
+        left: 15%;
+    }
+
+    .fieldset__block {
+        flex-basis: 20%;
+    }
+
+    .button--submit {
+        width: 35%;
+    }
+}
+
+@include media-md {
+    .signup {
+        width: 50%;
+        left: 25%;
+    }
+}
+
+@include media-lg {
+    .signup {
+        width: 40%;
+        left: 30%;
+    }
+}

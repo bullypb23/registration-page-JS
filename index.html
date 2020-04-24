@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body class="page">
+    <header class="header">
+        <nav class="header__nav">
+            <button class="button button--signup button-email">Sign up with email</button>
+            <button class="button button--signup button-mobile">Sign up with phone number</button>
+        </nav>
+    </header>
+
+    <main class="main">
+        
+    </main>
+
+    <div class="signup">
+        <h2 class="signup__title">Sign up</h2>
+        <form class="form" name="registration">
+            <div class="registration">
+                <input class="registration__input" type="text" name="name" id="name" required>
+                <label class="registration__label" for="name">Enter</label>
+                <p class="information information--input"></p>
+            </div>
+            <div class="currency">
+                <fieldset class="fieldset">
+                    <legend>Choose a currency</legend>
+                    <div class="fieldset__container">
+
+                        <div class="fieldset__block">
+                            <label class="fieldset__label" for="rsd"><input class="fieldset__radio" type="radio" name="currency" id="rsd" value="rsd">RSD</label>
+                        </div>
+                        
+                        <div class="fieldset__block">
+                            <label class="fieldset__label" for="eur"><input class="fieldset__radio" type="radio" name="currency" id="eur" value="eur">EUR</label>
+                        </div>
+
+                        <div class="fieldset__block">
+                            <label class="fieldset__label" for="usd"><input class="fieldset__radio" type="radio" name="currency" id="usd" value="usd">USD</label>
+                        </div>
+
+                        <div class="fieldset__block">
+                            <label class="fieldset__label" for="chf"><input class="fieldset__radio" type="radio" name="currency" id="chf" value="chf">CHF</label>
+                        </div>
+                        
+                    </div>
+                </fieldset>
+                <p class="information information--currency">Select currency.</p>
+            </div>
+            <div class="terms">
+                <input class="terms__checkbox" type="checkbox" name="terms" id="terms" value="agree">
+                <label class="terms__label" for="terms"> I agree to terms and conditions, payments terms of service and privacy policy.</label>
+                <input class="terms__checkbox" type="checkbox" name="newsletter" id="subscribe" value="subscribe">
+                <label class="terms__label" for="subscribe"> I agree to recieve newsletter and promo notifications.</label>
+                <p class="information information--terms"></p>
+            </div>
+            <div class="submit">
+                <button class="button button--submit" type="submit">Sign up</button>
+            </div>
+            <p class="form__information"></p>
+        </form>
+        <div class="signup__exit">
+            <i class="fas fa-times"></i>
+        </div>
+    </div>
+
+    <div class="backdrop"></div>
+
+    <div class="spinner"></div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

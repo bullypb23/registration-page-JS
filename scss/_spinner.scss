@@ -1,0 +1,34 @@
+.spinner {
+    display: none;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
+
+    &:after {
+        content: " ";
+        display: block;
+        width: 64px;
+        height: 64px;
+        margin: 8px;
+        border-radius: 50%;
+        border: 6px solid #E61E4D;
+        border-color: #E61E4D transparent #E61E4D transparent;
+        animation: spinner 1.2s linear infinite;
+    }
+
+    &.active {
+        display: block;
+        z-index: 200;
+    }
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

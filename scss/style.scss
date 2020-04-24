@@ -1,0 +1,227 @@
+@import "config";
+@import "mixins";
+@import "spinner";
+
+.header {
+    width: 100%;
+    height: 50px;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.15);
+
+    &__nav {
+        width: 100%;
+        height: 100%;
+        @include flex(flex-end, center);
+        padding: 0 20px;
+    }
+}
+
+.button {
+    @include button;
+
+    &--signup {
+        background-color: #fff;
+
+        &:hover {
+            background-color: lighten($primaryColor, 30);
+        }
+    }
+
+    &--submit {
+        font-size: $bigFont;
+        background: linear-gradient(to right, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
+        color: #fff;
+        width: 50%;
+        margin: 10px 0;
+
+        &:hover {
+            background: linear-gradient(to left, #E61E4D 0%, #E31C5F 50%, #D70466 100%);
+        }
+    }
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    @include flex(center, flex-start);
+}
+
+.signup {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 10%;
+    border-radius: 20px;
+    background-color: #fff;
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+    transform: translateY(-200%);
+    transition: all 0.8s ease-in;
+    
+    &--active {
+        z-index: 200;
+        transform: translateY(0);
+    }
+
+    &__title {
+        font-size: $bigFont;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid $primaryColor;
+    }
+
+    &__exit {
+        position: absolute;
+        top: 20px;
+        left: 15px;
+        width: 20px;
+        height: 20px;
+        @include flex(center, center);
+        color: #000;
+        cursor: pointer;
+    }
+}
+
+.form {
+    width: 100%;
+    padding: 10px 30px;
+    margin: 10px 0;
+    @include flex(center, flex-start);
+    flex-wrap: wrap;
+
+    &__information {
+        text-align: center;
+        font-size: $smallFont;
+        color: $primaryColor;
+
+        &.invalid {
+            color: #ff0000;
+        }
+
+        &.success {
+            color: #00cc00;
+        }
+    }
+}
+
+.registration {
+    flex: 1 1 100%;
+    position: relative;
+    margin-bottom: 20px;
+
+    &__input {
+        width: 100%;
+        @include input;
+
+        &.invalid {
+            border-color: #ff0000;
+        }
+    }
+
+    &__input:valid + &__label,
+    &__input:focus + &__label {
+        top: -10px;
+        font-size: $smallFont;
+    }
+
+    &__label {
+        position: absolute;
+        top: 0;
+        left: 0;
+        color: $primaryColor;
+        padding: 16px;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: 0.5s;
+
+        &.invalid {
+            color: #ff0000;
+            font-weight: bold;
+        }
+    }
+}
+
+.currency {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+}
+
+.fieldset {
+    border: 1px solid $primaryColor;
+    padding: 10px 15px 15px;
+    width: 100%;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    
+    &__container {
+        @include flex(flex-start, flex-start);
+        width: 100%;
+    }
+
+    &__block {
+        flex-basis: 25%;
+    }
+
+    &__label {
+        width: 100%;
+    }
+
+    &__radio {
+        margin-right: 5px;
+    }
+}
+
+.terms {
+    flex: 1 1 100%;
+    @include flex(flex-start, flex-start);
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    &__checkbox {
+        flex: 1 1 5%;
+        height: 20px;
+        margin: 0 10px 10px 0;
+    }
+    
+    &__label {
+        flex: 1 1 90%;
+        font-size: 0.85rem;
+        margin-bottom: 10px;
+    }
+}
+
+.submit {
+    flex: 1 1 100%;
+    @include flex(center, flex-start);
+    margin-bottom: 20px;
+}
+    
+.information {
+    margin-top: 2px;
+    font-size: $smallFont;
+    color: $primaryColor;
+
+    &.invalid {
+        color: #ff0000;
+    }
+}
+
+
+.backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.35);
+    display: none;
+
+    &--active {
+        display: block;
+        z-index: 100;
+    }
+}
+
+@import "responsive";

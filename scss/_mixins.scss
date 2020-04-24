@@ -1,0 +1,44 @@
+@mixin flex($justify-content, $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin button {
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@mixin input {
+    padding: 20px 15px 10px;
+    border: 1px solid $primaryColor;
+    border-radius: 10px;
+    font-size: 1rem;
+
+    &:focus {
+        outline: none;
+        border-radius: 10px;
+        border: 1px solid #000;
+    }
+}
+
+@mixin media-sm {
+    @media screen and (min-width: 576px) {
+        @content;
+    }
+}
+
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 992px) {
+        @content;
+    }
+}
